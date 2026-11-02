@@ -1,6 +1,8 @@
 package hu.nje.javaeloadas.controller;
 
+import hu.nje.javaeloadas.model.OandaAccount;
 import hu.nje.javaeloadas.service.OandaAccountService;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,19 +15,37 @@ public class OandaAccountController {
 
     private final OandaAccountService oandaAccountService;
 
+    // Konstruktor - Dependency Injection
     public OandaAccountController(
             OandaAccountService oandaAccountService) {
 
         this.oandaAccountService = oandaAccountService;
     }
 
-    @GetMapping(value = "/forex/account",
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    // OANDA gyakorló számlák listájának lekérdezése
+    @GetMapping(
+            value = "/forex/account",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     public ResponseEntity<String> lekerSzamlak()
             throws IOException, InterruptedException {
 
         String jsonValasz = oandaAccountService.lekerSzamlak();
 
         return ResponseEntity.ok(jsonValasz);
+    }
+
+    // OANDA részletes számlaadatok lekérdezése
+    @GetMapping(
+            value = "/forex/account/summary",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<OandaAccount> lekerSzamlaOsszesito()
+            throws Exception {
+
+        OandaAccount account =
+                oandaAccountService.lekerSzamlaOsszesito();
+
+        return ResponseEntity.ok(account);
     }
 }

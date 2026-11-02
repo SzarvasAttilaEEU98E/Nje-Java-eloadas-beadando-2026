@@ -1,5 +1,7 @@
 package hu.nje.javaeloadas.service;
 
+import hu.nje.javaeloadas.model.OandaAccount;
+import hu.nje.javaeloadas.parser.OandaAccountResponseParser;
 import hu.nje.javaeloadas.request.OandaAccountRequest;
 import org.springframework.stereotype.Service;
 
@@ -13,32 +15,53 @@ public class OandaAccountService {
 
     private final HttpClient httpClient;
     private final OandaAccountRequest oandaAccountRequest;
+    private final OandaAccountResponseParser parser;
 
-    public OandaAccountService(OandaAccountRequest oandaAccountRequest) {
+    public OandaAccountService(
+            OandaAccountRequest oandaAccountRequest,
+            OandaAccountResponseParser parser) {
+
         this.httpClient = HttpClient.newHttpClient();
         this.oandaAccountRequest = oandaAccountRequest;
+        this.parser = parser;
     }
 
-    public String lekerSzamlak() throws IOException, InterruptedException {
+    // Gyakorló számlák listájának lekérdezése
+    public String lekerSzamlak()
+            throws IOException, InterruptedException {
 
-        // HTTP-kérés összeállítása
         HttpRequest request = oandaAccountRequest.keszitSzamlaKeres();
 
-        // HTTP-kérés elküldése az OANDA API felé
+        return kuldKeres(request);
+    }
+
+    // Részletes számlaadatok lekérdezése és feldolgozása
+    public OandaAccount lekerSzamlaOsszesito() throws Exception {
+
+        HttpRequest request =
+                oandaAccountRequest.keszitSzamlaOsszesitoKeres();
+
+        String jsonValasz = kuldKeres(request);
+
+        return parser.feldolgoz(jsonValasz);
+    }
+
+    // Közös HTTP-kérés küldő metódus
+    private String kuldKeres(HttpRequest request)
+            throws IOException, InterruptedException {
+
         HttpResponse<String> response = httpClient.send(
                 request,
                 HttpResponse.BodyHandlers.ofString()
         );
 
-        // HTTP-státuszkód ellenőrzése
         if (response.statusCode() != 200) {
             throw new IOException(
-                    "Az OANDA számlalekérdezés sikertelen. HTTP státuszkód: "
+                    "Az OANDA API-kérés sikertelen. HTTP státuszkód: "
                             + response.statusCode()
             );
         }
 
-        // Az OANDA JSON-válaszának visszaadása
         return response.body();
     }
 }
