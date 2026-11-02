@@ -1,6 +1,6 @@
 package hu.nje.javaeloadas.service;
 
-import hu.nje.eloadasbeadando.request.MnbSoapRequest;
+import hu.nje.javaeloadas.request.MnbSoapRequest;
 import org.springframework.stereotype.Service;
 
 import java.net.http.HttpClient;
