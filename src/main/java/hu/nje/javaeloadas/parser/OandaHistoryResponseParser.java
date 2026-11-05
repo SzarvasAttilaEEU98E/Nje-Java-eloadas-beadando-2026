@@ -1,7 +1,7 @@
 
 package hu.nje.javaeloadas.parser;
 
-import hu.nje.eloadasbeadando.model.OandaHistory;
+import hu.nje.javaeloadas.model.OandaHistory;
 import org.springframework.stereotype.Component;
 
 import tools.jackson.databind.JsonNode;

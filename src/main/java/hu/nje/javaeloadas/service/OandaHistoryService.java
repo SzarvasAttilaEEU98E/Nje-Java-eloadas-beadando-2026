@@ -1,9 +1,9 @@
 
 package hu.nje.javaeloadas.service;
 
-import hu.nje.eloadasbeadando.model.OandaHistory;
-import hu.nje.eloadasbeadando.parser.OandaHistoryResponseParser;
-import hu.nje.eloadasbeadando.request.OandaHistoryRequest;
+import hu.nje.javaeloadas.model.OandaHistory;
+import hu.nje.javaeloadas.parser.OandaHistoryResponseParser;
+import hu.nje.javaeloadas.request.OandaHistoryRequest;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

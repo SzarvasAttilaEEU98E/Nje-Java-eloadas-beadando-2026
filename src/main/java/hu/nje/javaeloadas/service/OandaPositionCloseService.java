@@ -1,7 +1,7 @@
 
 package hu.nje.javaeloadas.service;
 
-import hu.nje.eloadasbeadando.request.OandaPositionCloseRequest;
+import hu.nje.javaeloadas.request.OandaPositionCloseRequest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

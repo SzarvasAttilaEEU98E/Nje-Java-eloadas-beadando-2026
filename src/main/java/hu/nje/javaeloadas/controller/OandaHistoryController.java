@@ -1,8 +1,8 @@
 
 package hu.nje.javaeloadas.controller;
 
-import hu.nje.eloadasbeadando.model.OandaHistory;
-import hu.nje.eloadasbeadando.service.OandaHistoryService;
+import hu.nje.javaeloadas.model.OandaHistory;
+import hu.nje.javaeloadas.service.OandaHistoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

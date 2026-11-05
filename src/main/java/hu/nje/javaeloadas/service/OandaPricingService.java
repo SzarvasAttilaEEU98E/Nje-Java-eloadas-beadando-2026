@@ -1,9 +1,9 @@
 
 package hu.nje.javaeloadas.service;
 
-import hu.nje.eloadasbeadando.model.OandaPricing;
-import hu.nje.eloadasbeadando.parser.OandaPricingResponseParser;
-import hu.nje.eloadasbeadando.request.OandaPricingRequest;
+import hu.nje.javaeloadas.model.OandaPricing;
+import hu.nje.javaeloadas.parser.OandaPricingResponseParser;
+import hu.nje.javaeloadas.request.OandaPricingRequest;
 
 import org.springframework.stereotype.Service;
 

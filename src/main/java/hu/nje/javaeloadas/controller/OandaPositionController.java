@@ -1,8 +1,8 @@
 
 package hu.nje.javaeloadas.controller;
 
-import hu.nje.eloadasbeadando.model.OandaPosition;
-import hu.nje.eloadasbeadando.service.OandaPositionService;
+import hu.nje.javaeloadas.model.OandaPosition;
+import hu.nje.javaeloadas.service.OandaPositionService;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
 
 package hu.nje.javaeloadas.parser;
 
-import hu.nje.eloadasbeadando.model.OandaPricing;
+import hu.nje.javaeloadas.model.OandaPricing;
 import org.springframework.stereotype.Component;
 
 import tools.jackson.databind.JsonNode;

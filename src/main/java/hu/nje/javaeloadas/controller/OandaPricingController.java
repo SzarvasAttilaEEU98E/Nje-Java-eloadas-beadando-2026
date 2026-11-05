@@ -1,8 +1,8 @@
 
 package hu.nje.javaeloadas.controller;
 
-import hu.nje.eloadasbeadando.model.OandaPricing;
-import hu.nje.eloadasbeadando.service.OandaPricingService;
+import hu.nje.javaeloadas.model.OandaPricing;
+import hu.nje.javaeloadas.service.OandaPricingService;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

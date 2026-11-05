@@ -1,9 +1,9 @@
 
 package hu.nje.javaeloadas.service;
 
-import hu.nje.eloadasbeadando.model.OandaPosition;
-import hu.nje.eloadasbeadando.parser.OandaPositionResponseParser;
-import hu.nje.eloadasbeadando.request.OandaPositionRequest;
+import hu.nje.javaeloadas.model.OandaPosition;
+import hu.nje.javaeloadas.parser.OandaPositionResponseParser;
+import hu.nje.javaeloadas.request.OandaPositionRequest;
 
 import org.springframework.stereotype.Service;
 

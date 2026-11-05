@@ -1,7 +1,7 @@
 
 package hu.nje.javaeloadas.controller;
 
-import hu.nje.eloadasbeadando.service.OandaOrderService;
+import hu.nje.javaeloadas.service.OandaOrderService;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

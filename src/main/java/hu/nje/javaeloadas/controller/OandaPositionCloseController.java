@@ -1,7 +1,7 @@
 
 package hu.nje.javaeloadas.controller;
 
-import hu.nje.eloadasbeadando.service.OandaPositionCloseService;
+import hu.nje.javaeloadas.service.OandaPositionCloseService;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
