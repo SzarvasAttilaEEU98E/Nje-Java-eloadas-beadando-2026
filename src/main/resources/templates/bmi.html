@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI kalkulátor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">BMI kalkulátor</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Add meg a testsúlyodat és a magasságodat!
+                    </p>
+
+                    <form th:action="@{/bmi}"
+                          th:object="${bmiForm}"
+                          method="post">
+
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">
+                                Testsúly (kg)
+                            </label>
+
+                            <input type="number"
+                                   step="any"
+                                   min="0.01"
+                                   id="weight"
+                                   th:field="*{weight}"
+                                   class="form-control"
+                                   placeholder="Pl. 75"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="heightCm" class="form-label">
+                                Magasság (cm)
+                            </label>
+
+                            <input type="number"
+                                   step="any"
+                                   min="0.01"
+                                   id="heightCm"
+                                   th:field="*{heightCm}"
+                                   class="form-control"
+                                   placeholder="Pl. 180"
+                                   required>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            BMI kiszámítása
+                        </button>
+
+                    </form>
+
+                    <div th:if="${result != null}"
+                         class="alert alert-success mt-4">
+
+                        <h5>Számítás eredménye</h5>
+
+                        <p class="mb-1">
+                            BMI:
+                            <strong th:text="${result}"></strong>
+                        </p>
+
+                        <p class="mb-0">
+                            Kategória:
+                            <strong th:text="${category}"></strong>
+                        </p>
+
+                    </div>
+
+                    <div th:if="${error != null}"
+                         class="alert alert-danger mt-4"
+                         th:text="${error}">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a th:href="@{/}" class="btn btn-outline-secondary">
+                    Vissza a főoldalra
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
