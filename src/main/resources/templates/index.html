@@ -24,15 +24,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" th:href="@{/}" href="/">Főoldal</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" th:href="@{/soap}" href="/soap">SOAP</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" th:href="@{/soap/page}" href="/soap/page">SOAP</a></li>
                 <li class="nav-item dropdown mx-0 mx-lg-1">
                     <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded" href="#" id="forexDropdown"
                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Forex</a>
                     <ul class="dropdown-menu" aria-labelledby="forexDropdown">
                         <li><a class="dropdown-item" th:href="@{/forex/account}" href="/forex/account">Számlainformációk</a></li>
-                        <li><a class="dropdown-item" th:href="@{/forex/prices}" href="/forex/prices">Aktuális ár</a></li>
+                        <li><a class="dropdown-item" th:href="@{/forex/pricing/page}" href="/forex/pricing/page">Aktuális ár</a></li>
                         <li><a class="dropdown-item" th:href="@{/forex/history}" href="/forex/history">Historikus ár</a></li>
-                        <li><a class="dropdown-item" th:href="@{/forex/open}" href="/forex/open">Pozíció nyitása</a></li>
+                        <li><a class="dropdown-item" th:href="@{/forex/order/page}" href="/forex/order/page">Pozíció nyitása</a></li>
                         <li><a class="dropdown-item" th:href="@{/forex/positions}" href="/forex/positions">Nyitott pozíciók</a></li>
                         <li><a class="dropdown-item" th:href="@{/forex/close}" href="/forex/close">Pozíció zárása</a></li>
                     </ul>
@@ -72,7 +72,7 @@
                             <i class="fas fa-chart-area fa-3x text-primary mb-3"></i>
                             <h3 class="h5">MNB SOAP</h3>
                             <p>Devizaárfolyamok lekérdezése dátumtartomány alapján, grafikonon is.</p>
-                            <a class="btn btn-primary" th:href="@{/soap}" href="/soap">SOAP menü</a>
+                            <a class="btn btn-primary" th:href="@{/soap/page}" href="/soap/page">SOAP menü</a>
                         </div>
                     </div>
                 </div>
@@ -91,8 +91,7 @@
                         <div class="card-body p-4">
                             <i class="fas fa-coins fa-3x text-primary mb-3"></i>
                             <h3 class="h5">Forex árfolyamok</h3>
-                            <p>Instrumentumok aktuális és historikus árainak lekérdezése.</p>
-                            <a class="btn btn-primary" th:href="@{/forex/prices}" href="/forex/prices">Aktuális ár</a>
+                            <p>Instrumentumok aktuális és historikus árainak lekérdezése.</p><a class="btn btn-primary" th:href="@{/forex/pricing/page}" href="/forex/pricing/page">Aktuális ár</a>
                             <a class="btn btn-outline-primary mt-2" th:href="@{/forex/history}" href="/forex/history">Historikus ár</a>
                         </div>
                     </div>
@@ -103,7 +102,7 @@
                             <i class="fas fa-arrow-trend-up fa-3x text-primary mb-3"></i>
                             <h3 class="h5">Pozíció nyitása</h3>
                             <p>Long és Short pozíció nyitása piaci áron.</p>
-                            <a class="btn btn-primary" th:href="@{/forex/open}" href="/forex/open">Nyitás</a>
+                            <a class="btn btn-primary" th:href="@{/forex/order/page}" href="/forex/order/page">Nyitás</a>
                         </div>
                     </div>
                 </div>
