@@ -1,4 +1,4 @@
-package calculator;
+package hu.nje.javaeloadas.calculator;
 
 import hu.nje.javaeloadas.calculator.BmiCalculator;
 import org.junit.jupiter.api.BeforeEach;
